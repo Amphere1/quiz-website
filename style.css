@@ -1,0 +1,126 @@
+body{
+    background-image: url(./assets/earth\ background.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.headingText{
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    font-family: "Quicksand", serif;
+    
+}
+
+h1{
+    color: "";
+}
+
+.start{
+    display: flex;
+    justify-content: center;   
+}
+
+.button{
+    margin-top: 50px;
+}
+
+.landingPageB{
+    background: #27ae60;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 5px #1e8449;
+    transition: 0.2s;
+}
+
+.pressed{
+    transform: scale(0.90);
+}
+
+.app{
+    background: rgba(0,0,0,0.5);
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.quiz{
+    padding: 20px 0;
+}
+
+.quiz h2{
+    color: white;
+    font-family:"Quicksand", serif;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.btn{
+    width: 100%;
+    background: white;
+    color: black;
+    padding: 12px 24px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 5px grey;
+    transition: 0.2s;
+    text-align: left;
+}
+
+.btn:hover:not([disabled]){
+    background: #222;
+    color: #fff;
+}
+
+.btn:disabled{
+    cursor: no-drop;
+}
+
+#next-btn{
+    background: #49699c;
+    color: #fff;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+}
+
+.correct{
+    background: green;
+}
+
+.incorrect{
+    background: red;
+}
+
+
+.pie-chart {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        #3498db 0deg 288deg, /* Blue for score (4/5 → 80%) */
+        #ecf0f1 288deg 360deg /* Light grey for remaining */
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
