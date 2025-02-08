@@ -81,6 +81,8 @@ function showQuestion(){
 }
 
 function resetState(){
+    questionElement.classList.remove("pie-chart");
+    questionElement.style.background = "";
     nextButton.style.display = "none";
     while(answerButton.firstChild){
         answerButton.removeChild(answerButton.firstChild);
@@ -125,13 +127,16 @@ function handleNextButton(){
 function showScore(){
     resetState();
     questionElement.innerHTML = "you scored " + score + " out of " + questions.length ;
+
     questionElement.classList.add("pie-chart");
+    var percentage = (score / questions.length) * 100; 
+    var resultDegrees = (percentage / 100) * 360;
+
+    var pieChart = document.querySelector(".pie-chart");
+    pieChart.style.background = `conic-gradient(#d1d624 0deg ${resultDegrees}deg, #ecf0f1 ${resultDegrees}deg 360deg)`;
+    
     nextButton.innerHTML = "PLay again";
     nextButton.style.display = "block";
-    
-    setTimeout(function(){
-        questionElement.classList.remove("pie-chart");
-    }, 500)
 }
 
 nextButton.addEventListener("click", () =>{

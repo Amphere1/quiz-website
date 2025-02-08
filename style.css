@@ -114,8 +114,8 @@ h1{
     height: 100%;
     border-radius: 50%;
     background: conic-gradient(
-        #3498db 0deg 288deg, /* Blue for score (4/5 → 80%) */
-        #ecf0f1 288deg 360deg /* Light grey for remaining */
+        #d1d624 0% 50%, /* Blue for score (4/5 → 80%) */
+        #ecf0f1 50% 100% /* Light grey for remaining */
     );
     display: flex;
     justify-content: center;
