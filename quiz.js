@@ -91,27 +91,30 @@ function resetState(){
 
 function selectAnswer(e){
     const selectedBtn = e.target;
-    const isCorrect = selectedBtn.dataset.correct ===  "true";
+    const isCorrect = selectedBtn.dataset.correct === "true";
     var wrongSound = new Audio("assets/wrong.mp3");
     var correctSound = new Audio("assets/correct.mp3");
+    
     if(isCorrect){
         selectedBtn.classList.add("correct");
-        correctSound.play();
-        score++ ;
+        selectedBtn.style.backgroundColor = "#9aeabc"; // Force color for mobile
+        correctSound.play().catch(error => console.log("Audio play failed:", error));
+        score++;
     }else{
         selectedBtn.classList.add("incorrect");
-        wrongSound.play();
+        selectedBtn.style.backgroundColor = "#ff9393"; // Force color for mobile
+        wrongSound.play().catch(error => console.log("Audio play failed:", error));
     }
 
     Array.from(answerButton.children).forEach(button => {
         if(button.dataset.correct === "true"){
             button.classList.add("correct");
+            button.style.backgroundColor = "#9aeabc"; // Force color for mobile
         }
         button.disabled = true;
     });
 
     nextButton.style.display = "block";
-
 }
 
 function handleNextButton(){
@@ -126,16 +129,25 @@ function handleNextButton(){
 
 function showScore(){
     resetState();
-    questionElement.innerHTML = "you scored " + score + " out of " + questions.length ;
-
-    questionElement.classList.add("pie-chart");
-    var percentage = (score / questions.length) * 100; 
-    var resultDegrees = (percentage / 100) * 360;
-
-    var pieChart = document.querySelector(".pie-chart");
+    const scoreContainer = document.createElement("div");
+    scoreContainer.innerHTML = `You scored ${score} out of ${questions.length}`;
+    scoreContainer.classList.add("score-text");
+    
+    const pieChart = document.createElement("div");
+    pieChart.classList.add("pie-chart");
+    
+    const percentage = (score / questions.length) * 100; 
+    const resultDegrees = (percentage / 100) * 360;
+    
     pieChart.style.background = `conic-gradient(#d1d624 0deg ${resultDegrees}deg, #ecf0f1 ${resultDegrees}deg 360deg)`;
     
-    nextButton.innerHTML = "PLay again";
+    questionElement.innerHTML = "";
+    questionElement.appendChild(scoreContainer);
+    questionElement.appendChild(pieChart);
+    
+    document.querySelector('.quiz').classList.add('show-score');
+    
+    nextButton.innerHTML = "Play again";
     nextButton.style.display = "block";
 }
 

@@ -2,8 +2,75 @@
 <html lang = "en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <title>Geo-Quiz</title>
         <link href="./style.css" rel="stylesheet">
+        <!-- Add this internal CSS -->
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                width: 100%;
+                overflow-x: hidden;
+                position: fixed;
+            }
+
+            @media screen and (max-width: 600px) {
+                body {
+                    padding: 10px;
+                    margin: 0;
+                    min-height: 100vh;
+                    background-size: cover !important;
+                    background-position: center center !important;
+                    background-repeat: no-repeat !important;
+                    background-attachment: fixed !important;
+                    overflow-x: hidden;
+                    width: 100%;
+                }
+
+                .headingText {
+                    font-size: 2rem;
+                    padding: 10px;
+                    text-align: center;
+                }
+
+                h1 {
+                    margin: 20px 0;
+                    text-align: center;
+                }
+
+                .start {
+                    margin-top: 30vh;
+                    width: 100%;
+                }
+
+                .button {
+                    margin-top: 20px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    padding: 0 20px;
+                    box-sizing: border-box;
+                }
+
+                .landingPageB {
+                    width: 80%;
+                    max-width: 300px;
+                    padding: 15px;
+                    font-size: 1.2rem;
+                }
+
+                #heading {
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding: 10px;
+                    position: relative;
+                    z-index: 1;
+                }
+            }
+        </style>
+        <!-- Rest of your head content -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Parkinsans:wght@300..800&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
